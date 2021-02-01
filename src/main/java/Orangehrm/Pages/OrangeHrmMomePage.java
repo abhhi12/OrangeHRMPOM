@@ -28,6 +28,7 @@ public class OrangeHrmMomePage {
 	private By OrangeHrmLogog = By.xpath("//img[@class='nav-logo']");
 	private By HeaderLink = By.xpath("//a[@class='link']");
 	private By FooterContainer = By.xpath("(//div[@class='container'])[8]");
+	private By ModularSolution = By.xpath("//div[@class='row modular-thumbs row-centered']/div/a/span");
 	
 	public OrangeHrmMomePage(WebDriver driver) {
 		this.driver=driver;
@@ -70,6 +71,12 @@ public class OrangeHrmMomePage {
 	public OrangeHrmRegFormPage DoLoginPage_As30DaysTrial() {
 		eleutil.doClick(LoginToRegPage);
 		return new OrangeHrmRegFormPage(driver);
+	}
+	public boolean doModularSolution() {
+		if(eleutil.getElements(ModularSolution).size()==Constants.MODULAR_SOLUTION) {
+			return true;
+		}
+		return false;
 	}
 	
 	

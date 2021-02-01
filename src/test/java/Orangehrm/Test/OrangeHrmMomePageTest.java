@@ -30,5 +30,10 @@ public class OrangeHrmMomePageTest extends BaseTest {
 		OrHmpage.getheadercount();
 		Assert.assertTrue(OrHmpage.getheadercount());
 	}
+	@Test(priority=4)
+	public void testdoModularSolution() {
+		Assert.assertTrue(OrHmpage.doModularSolution());
+		
+	}
 
 }

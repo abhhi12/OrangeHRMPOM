@@ -36,7 +36,7 @@ public class OrangeHrmRegFormPage {
 		eleutil = new ElementUtil(driver);
 	}
 	@Step("For Subbmit with FirstName:{0}, Lastname:{1}, Email:{3}, Jobtitle:{4}, Company:{5}, and Contactno:{6}")
-	public void OrangeHrmRegFormPageSetUp(String Firstname, String LastName, String Email, String Jobtitle,String EmpNo, String Company, String ind,String Phoneno, String Comp) {
+	public void OrangeHrmRegFormPageSetUp(String Firstname, String LastName, String Email, String Jobtitle, String Company, String ind,String Phoneno, String Comp) {
 		eleutil.doSendKeys(firstname, Firstname);
 		eleutil.doSendKeys(lastname, LastName);
 		eleutil.doSendKeys(email, Email);

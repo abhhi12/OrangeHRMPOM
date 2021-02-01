@@ -1,9 +1,15 @@
 package Orangehrm.Test;
 
+
+
+import java.util.List;
+
+import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import Orangehrm.BaseTest.BaseTest;
+import Orangehrm.Utils.Constants;
 import io.qameta.allure.Description;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
@@ -32,7 +38,9 @@ public class OrangeHrmMomePageTest extends BaseTest {
 	}
 	@Test(priority=4)
 	public void testdoModularSolution() {
-		Assert.assertTrue(OrHmpage.doModularSolution());
+		List<String> getmodular=OrHmpage.doModularSolution();
+		System.out.println(getmodular);
+		Assert.assertEquals(getmodular, Constants.getExpectedModularSolution());
 		
 	}
 

@@ -2,6 +2,7 @@ package Orangehrm.Pages;
 
 
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.openqa.selenium.By;
@@ -28,7 +29,7 @@ public class OrangeHrmMomePage {
 	private By OrangeHrmLogog = By.xpath("//img[@class='nav-logo']");
 	private By HeaderLink = By.xpath("//a[@class='link']");
 	private By FooterContainer = By.xpath("(//div[@class='container'])[8]");
-	private By ModularSolution = By.xpath("//div[@class='row modular-thumbs row-centered']/div/a/span");
+	private By ModularSolution = By.xpath("//h4[@class='text-center module-title']");
 	
 	public OrangeHrmMomePage(WebDriver driver) {
 		this.driver=driver;
@@ -72,15 +73,14 @@ public class OrangeHrmMomePage {
 		eleutil.doClick(LoginToRegPage);
 		return new OrangeHrmRegFormPage(driver);
 	}
-	public boolean doModularSolution() {
-		if(eleutil.getElements(ModularSolution).size()==Constants.MODULAR_SOLUTION) {
-			return true;
+	public List<String> doModularSolution() {
+		List<String> modularlist = new ArrayList<String>();
+		
+		List<WebElement> modular=eleutil.getElements(ModularSolution);
+		for(WebElement e: modular) {
+			String Module=e.getText();
+			modularlist.add(Module);
 		}
-		return false;
+		return modularlist;
 	}
-	
-	
-	
-	
-
 }
